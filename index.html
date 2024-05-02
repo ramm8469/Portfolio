@@ -221,7 +221,7 @@
 								<i class="icon-briefcase"></i>
 							</span>
 							<div class="feature-copy">
-								<h3>Colud Architect</h3>
+								<h3>Cloud Architect</h3>
 								<p>Preferabley with AWS: Desiging and developing solutions driven by AWS services using cloud agnostic tools like Terraform.</p>
 							</div>
 						</div>
@@ -441,40 +441,48 @@
 		</div>
 		<div class="choose animate-box">
 			<h2>Contact</h2>
-			<form action="#">
+			<form action="https://api.web3forms.com/submit"  method="POST">
+				<input type="hidden" name="access_key" value="ff3150eb-d7c6-4012-aea1-7663f82a23ba">
 				<div class="row form-group">
 					<div class="col-md-6">
-						<input type="text" id="fname" class="form-control" placeholder="Your firstname">
+						<input type="text" required="" id="fname" name="fname" class="form-control" placeholder="Your firstname">
 					</div>
 				</div>
 				<div class="row form-group">
 					<div class="col-md-6">
-						<input type="text" id="lname" class="form-control" placeholder="Your lastname">
+						<input type="text" id="lname" name="lname" class="form-control" placeholder="Your lastname">
 					</div>
 				</div>
 
 				<div class="row form-group">
 					<div class="col-md-12">
-						<input type="text" id="email" class="form-control" placeholder="Your email address">
+						<input type="email" id="email" name="email"  required="" class="form-control" placeholder="Your email address">
 					</div>
 				</div>
 
 				<div class="row form-group">
 					<div class="col-md-12">
-						<input type="text" id="subject" class="form-control" placeholder="Your subject of this message">
+						<input type="text" id="subject" name="subject" required="" class="form-control" placeholder="Your subject of this message">
 					</div>
 				</div>
 
 				<div class="row form-group">
 					<div class="col-md-12">
-						<textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Say something about us"></textarea>
+						<textarea name="message" id="message" required="" cols="30" rows="10" class="form-control" placeholder="Say something about us"></textarea>
 					</div>
 				</div>
+				<input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+				 <!-- hCaptcha Spam Protection -->
+				 <div class="h-captcha" data-captcha="true"></div>
+				 <input type="hidden" name="from_name" value="contact-form-rammohankunwar.com">
+				 <input type="hidden" name="redirect" value="https://www.rammohankunwar.com/">
+
 				<div class="form-group">
 					<input type="submit" value="Send Message" class="btn btn-primary">
 				</div>
-
 			</form>	
+			<!-- Required for hCaptcha -->
+			<script src="https://web3forms.com/client/script.js" async defer></script>
 		</div>
 	</div>
 	
