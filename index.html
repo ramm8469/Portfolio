@@ -441,7 +441,7 @@
 		</div>
 		<div class="choose animate-box">
 			<h2>Contact</h2>
-			<form action="https://api.web3forms.com/submit"  method="POST">
+			<form id="contact-form" action="https://api.web3forms.com/submit"  method="POST">
 				<input type="hidden" name="access_key" value="ff3150eb-d7c6-4012-aea1-7663f82a23ba">
 				<div class="row form-group">
 					<div class="col-md-6">
@@ -471,12 +471,11 @@
 						<textarea name="message" id="message" required="" cols="30" rows="10" class="form-control" placeholder="Say something about us"></textarea>
 					</div>
 				</div>
+				<input type="hidden" name="from_name" value="contact-form-rammohankunwar.com">
+				<input type="hidden" name="redirect" value="https://web3forms.com/success">
 				<input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 				 <!-- hCaptcha Spam Protection -->
-				 <div class="h-captcha" data-captcha="true"></div>
-				 <input type="hidden" name="from_name" value="contact-form-rammohankunwar.com">
-				 <input type="hidden" name="redirect" value="https://www.rammohankunwar.com/">
-
+				 <div class="h-captcha" data-captcha="true" required=""></div>
 				<div class="form-group">
 					<input type="submit" value="Send Message" class="btn btn-primary">
 				</div>
@@ -518,6 +517,20 @@
 	
 	<!-- Main -->
 	<script src="js/main.js"></script>
+	<script>
+		const form = document.getElementById('contact-form');
+		
+		form.addEventListener('submit', function(e) {
+		
+			const hCaptcha = form.querySelector('textarea[name=h-captcha-response]').value;
+		
+			if (!hCaptcha) {
+				e.preventDefault();
+				alert("Please fill out captcha field")
+				return
+			}
+		});
+		</script>
 
 	</body>
 </html>
